@@ -1,0 +1,24 @@
+{% extends 'base_task.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a href="/"><- Kembali</a>
+            <h2>Detail Mahasiswa</h2>
+            <img src="{{ mahasiswa['foto']}}" alt="">
+            <h4>{{ mahasiswa['nama']}}</h4>
+            <h5>Email:{{ mahasiswa['email']}}</h5>
+            <h5>Nilai:{{mahasiswa['nilai']}}</h5>
+            <h5>
+                {% if mahasiswa['nilai'] > 60 %}
+                <p class="text-success">Lulus</p>
+                {% else %}
+                <p class="text-danger">Belum Lulus</p>
+                {% endif %}
+            </h5>
+        </div>
+    </div>
+</div>
+{% endblock %}

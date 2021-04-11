@@ -1,0 +1,19 @@
+{% extends 'base_task.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form action="/proseslogin" method="POST">
+                <h3>Login</h3>
+                <input placeholder="username" type="text" name="username" id="username" autocomplete="off">
+                <br>
+                <input placeholder="password" type="password" name="password" id="password" autocomplete="off">
+                <br>
+                <button type="submit" class="btn btn-sm mt-2 btn-primary" name="submit" value="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

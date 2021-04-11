@@ -1,0 +1,29 @@
+{% extends 'base_task.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form action="/add" method="POST">
+                <h3>Tambah data</h3>
+                <input placeholder="Nama Lengkap" type="text" name="nama" id="nama">
+                <br>
+                <input placeholder="Nilai" type="number" name="nilai" id="nilai">
+                <br>
+                <button type="submit" class="btn btn-sm mt-2 btn-primary" name="submit" value="submit">Submit</button>
+            </form>
+            <h2>Daftar Mahasiswa</h2>
+            <ol>
+                {% for mahasiswa in daftar_mahasiswa %}
+                    <li>
+                        <a href="/detail/{{ mahasiswa['id']}} "> {{ mahasiswa['nama']}} </a> |
+                        <a href="/update/{{ mahasiswa['id'] }}" class="text-warning"> update </a> |
+                        <a href="/delete/{{ mahasiswa['id'] }}" class="text-danger"> delete </a> 
+                    </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
